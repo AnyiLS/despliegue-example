@@ -24,3 +24,13 @@ jobs:
 
       - name: Generate Laravel application key
         run: php artisan key:generate
+
+        - name: Deploy To Server
+          uses: SamKirkland/FTP-Deploy-Action@4.3.3
+          with:
+            server: eml.com.co
+            username: deployeml@eml.com.co
+            password: EmlPage2023
+            protocol: ftp
+            server-dir: ./example.eml.com.co/
+            local-dir: ./
